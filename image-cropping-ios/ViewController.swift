@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func cropImage2(image: UIImage, rect: CGRect, scale: CGFloat) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: rect.size.width / scale, height: rect.size.height / scale), true, scale)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: rect.size.width / scale, height: rect.size.height / scale), true, 0.0)
         image.draw(at: CGPoint(x: -rect.origin.x / scale, y: -rect.origin.y / scale))
         let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
